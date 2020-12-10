@@ -7,7 +7,7 @@
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="login">login</string>
+    <string name="login">sign up</string>
     <string name="already_have_an_account_sign_in">Already have an account? sign in</string>
     <string name="hello_find_your_things_or_report_them">Hello, Find your things or report them!</string>
     <string name="sign_in_to_continue">Sign in to continue</string>
