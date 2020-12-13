@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LostFound2</string>
+    <string name="app_name">Lost and Found</string>
     <string name="logo">logo</string>
     <string name="welcome">Welcome</string>
     <string name="sign_up_to_get_started">Sign Up to get started!</string>
@@ -16,4 +16,8 @@
     <string name="create_an_account">Create an account</string>
     <string name="logoimage">LogoImage</string>
     <string name="welcome_to_lost_and_found_application">Welcome to Lost and Found Application</string>
+    <string name="item_name">item_name</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="create_a_post">Create a post.</string>
 </resources>

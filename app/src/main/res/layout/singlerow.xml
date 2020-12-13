@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<androidx.cardview.widget.CardView
+    app:cardUseCompatPadding="true"
+    android:elevation="5dp"
+    app:cardCornerRadius="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:layout_width="411dp"
+        android:layout_height="173dp"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/itemtext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="item name"
+            android:fontFamily="@font/amaranth_italic"
+            android:textColor="#000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/loctext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/itemtext"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="this_is_the_location"
+            android:fontFamily="@font/amaranth_italic"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loctext"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/date"
+            android:fontFamily="@font/amaranth_italic"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/date"
+            android:layout_marginLeft="10dp"
+            android:text="@string/time"
+            android:fontFamily="@font/amaranth_italic"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
