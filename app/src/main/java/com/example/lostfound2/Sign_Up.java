@@ -130,6 +130,18 @@ public class Sign_Up extends AppCompatActivity {
             }
         });
 
+        mSignupBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openListView2();
+            }
+        });
+
+    }
+
+    public void openListView2() {
+        Intent intent= new Intent(this, recActivity.class);
+        startActivity(intent);
     }
 
 
