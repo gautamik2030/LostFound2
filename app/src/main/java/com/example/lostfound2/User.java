@@ -8,6 +8,10 @@ public class User {
 
     }
 
+    public String getUsername() {
+        return this.username;
+    }
+
     public User(String name, String username, String email) {
         this.name = name;
         this.username = username;
