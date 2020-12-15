@@ -2,13 +2,16 @@ package com.example.lostfound2;
 
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,14 +23,15 @@ public class recActivity extends AppCompatActivity {
     RecyclerView recView;
     //create myadapter object
     myadapter adapter;
-
+    Button create;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_rec);
-
+        Toolbar toolbar = findViewById(R.id.toolbar) ;
+        setSupportActionBar(toolbar);
         recView = (RecyclerView) findViewById(R.id.recView);
         recView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -38,6 +42,8 @@ public class recActivity extends AppCompatActivity {
 
         adapter = new myadapter(options);
         recView.setAdapter(adapter);
+        create = findViewById(R.id.button2);
+        create.setOnClickListener((v) -> startActivity(new Intent(getApplicationContext(),CreatePost.class)));
 
 
     }

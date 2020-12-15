@@ -111,7 +111,7 @@ public class Sign_Up extends AppCompatActivity {
                                         Toast.makeText(Sign_Up.this, "User created successfully", Toast.LENGTH_LONG).show();
 
                                         //user signed up so send user to dashboard activity
-                                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                                        startActivity(new Intent(getApplicationContext(), recActivity.class));
                                     }
                                     else {
                                         //not successful so display error message to user
@@ -130,18 +130,6 @@ public class Sign_Up extends AppCompatActivity {
             }
         });
 
-        mSignupBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openListView2();
-            }
-        });
-
-    }
-
-    public void openListView2() {
-        Intent intent= new Intent(this, recActivity.class);
-        startActivity(intent);
     }
 
 

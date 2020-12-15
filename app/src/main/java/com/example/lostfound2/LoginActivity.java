@@ -43,15 +43,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
         //if it is a returning user, no need to signin every time, send user to main activity
-        if (fAuth.getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+        if(fAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), recActivity.class));
             finish();
         }
 
 
         //if user doesn't have an account and clicks on Create Account, send user to SignUp activity
         createAccount.setOnClickListener(view -> {
-            Intent intent = new Intent(LoginActivity.this, Sign_Up.class);
+            Intent intent= new Intent(LoginActivity.this, Sign_Up.class);
             startActivity(intent);
         });
 
@@ -62,12 +62,14 @@ public class LoginActivity extends AppCompatActivity {
                 String email = mEmail.getEditText().getText().toString().trim();
                 String password = mPassword.getEditText().getText().toString().trim();
 
-                if (email.equals("")) {
+                if(email.equals(""))
+                {
                     mEmail.getEditText().setError("Email is required.");
                     return;
                 }
 
-                if (password.equals("")) {
+                if(password.equals(""))
+                {
                     mPassword.getEditText().setError("Password is required.");
                     return;
                 }
@@ -78,12 +80,14 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         // event listener to know if signin was successful or not
-                        if (task.isSuccessful()) {
+                        if(task.isSuccessful()) {
                             //display successful message to user
                             Toast.makeText(LoginActivity.this, "Signed in successfully", Toast.LENGTH_LONG).show();
                             //user signed in so send user to dashboard activity
-                            startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
-                        } else {
+                            startActivity(new Intent(getApplicationContext(), recActivity.class));
+                        }
+
+                        else {
                             //not successful so display error message to user
                             Toast.makeText(LoginActivity.this, "Error occurred! " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
 
@@ -94,18 +98,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        mSigninBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openListView();
-            }
-        });
+
 
     }
-
-        public void openListView(){
-        Intent intent= new Intent(this, recActivity.class);
-        startActivity(intent);
-        }
-
-    }
+}
