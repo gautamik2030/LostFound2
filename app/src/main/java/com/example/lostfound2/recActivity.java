@@ -23,7 +23,7 @@ public class recActivity extends AppCompatActivity {
     RecyclerView recView;
     //create myadapter object
     myadapter adapter;
-    Button create;
+    Button create, home;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +42,12 @@ public class recActivity extends AppCompatActivity {
 
         adapter = new myadapter(options);
         recView.setAdapter(adapter);
+        adapter.startListening();
         create = findViewById(R.id.button2);
         create.setOnClickListener((v) -> startActivity(new Intent(getApplicationContext(),CreatePost.class)));
 
+        home = findViewById(R.id.home);
+        home.setOnClickListener((v) -> startActivity(new Intent(getApplicationContext(),DashboardActivity.class)));
 
     }
 
