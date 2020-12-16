@@ -24,7 +24,10 @@ public class myadapter extends FirebaseRecyclerAdapter<model, myadapter.myviewho
         holder.ItemName.setText(model.getItemName());
         holder.Location.setText(model.getLocation());
         holder.Date.setText(model.getDate());
-        holder.Time.setText(model.getTime());
+        holder.category.setText(model.getCategory());
+        holder.username.setText(model.getUsername());
+        holder.contact.setText(model.getContact());
+        holder.question.setText(model.getQuestion());
 
 
 
@@ -41,13 +44,16 @@ public class myadapter extends FirebaseRecyclerAdapter<model, myadapter.myviewho
     //holds the reference of the single row xml
     class myviewholder extends RecyclerView.ViewHolder{
 
-        TextView ItemName, Location, Date, Time;
+        TextView ItemName, Location, Date,category,username,contact,question;
         public myviewholder(@NonNull View itemView) {
             super(itemView);
-            ItemName=(TextView)itemView.findViewById(R.id.itemtext);
-            Location=(TextView)itemView.findViewById(R.id.loctext);
+            ItemName=(TextView)itemView.findViewById(R.id.name);
+            Location=(TextView)itemView.findViewById(R.id.location);
             Date=(TextView)itemView.findViewById(R.id.date);
-            Time=(TextView)itemView.findViewById(R.id.time);
+            category=(TextView)itemView.findViewById(R.id.cat);
+            username=(TextView)itemView.findViewById(R.id.username);
+            contact=(TextView)itemView.findViewById(R.id.contact);
+            question=(TextView)itemView.findViewById(R.id.question);
         }
     }
 

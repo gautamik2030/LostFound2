@@ -2,52 +2,68 @@ package com.example.lostfound2;
 
 public class model {
 
-    String ItemName,Location, Date,Time;
+    String ItemName, Location, Date, category, username, contact, question;
 
     //blank constructor so that the data goes into the recycler
-    model(){
+    model() {
 
     }
 
-    //constructors
-    public model(String ItemName, String Location, String Date, String Time) {
-        this.ItemName = ItemName;
-        this.Location= Location;
-        this.Date = Date;
-        this.Time = Time;
-    }
-
-
-    //getter and setter for all the variables
     public String getItemName() {
         return ItemName;
     }
 
-    public void setItemName(String ItemName) {
-        this.ItemName = ItemName;
+    public void setItemName(String itemName) {
+        ItemName = itemName;
     }
 
     public String getLocation() {
         return Location;
     }
 
-    public void setLocation(String Location) {
-        this.Location = Location;
+    public void setLocation(String location) {
+        Location = location;
     }
 
     public String getDate() {
         return Date;
     }
 
-    public void setDate(String Date) {
-        this.Date = Date;
+    public void setDate(String date) {
+        Date = date;
     }
 
-    public String getTime() {
-        return Time;
+    public String getCategory() {
+        return category;
     }
 
-    public void setTime(String Time) {
-        this.Time = Time;
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
+    }
+
+    public String getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(String question) {
+        this.question = question;
     }
 }
+
+//constructors

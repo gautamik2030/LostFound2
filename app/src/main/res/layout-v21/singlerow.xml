@@ -11,53 +11,88 @@
 
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="411dp"
+        android:layout_height="240dp"
         android:padding="15dp">
 
         <TextView
-            android:id="@+id/itemtext"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:text="@string/item_name"
+            android:text="item name"
+            android:fontFamily="@font/amaranth_italic"
             android:textColor="#000"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/loctext"
+            android:id="@+id/cat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/itemtext"
+            android:layout_below="@id/name"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="10dp"
-            android:text="this_is_the_location"
+            android:text="category"
+            android:fontFamily="@font/amaranth_italic"
             android:textColor="#000"
             android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cat"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="location"
+            android:fontFamily="@font/amaranth_italic"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
 
         <TextView
             android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/loctext"
+            android:layout_below="@id/location"
             android:layout_marginLeft="10dp"
-            android:text="Date"
+            android:text="date and time"
+            android:fontFamily="@font/amaranth_italic"
             android:textColor="#000"
             android:textSize="25sp" />
-
-
         <TextView
-            android:id="@+id/time"
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/date"
             android:layout_marginLeft="10dp"
-            android:text="Time"
+            android:text="username"
+            android:fontFamily="@font/amaranth_italic"
+            android:textColor="#000"
+            android:textSize="25sp" />
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username"
+            android:layout_marginLeft="10dp"
+            android:text="contact"
+            android:fontFamily="@font/amaranth_italic"
             android:textColor="#000"
             android:textSize="25sp" />
 
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/contact"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/amaranth_italic"
+            android:text="question"
+            android:textColor="#000"
+            android:textSize="25sp" />
 
     </RelativeLayout>
 
