@@ -2,7 +2,7 @@ package com.example.lostfound2;
 
 public class Objects1 {
 
-    private String name,location,contact,question,answer;
+    private String name,location,contact,question,date,username,category;
 
     public Objects1() {
     }
@@ -39,12 +39,28 @@ public class Objects1 {
         this.question = question;
     }
 
-    public String getAnswer() {
-        return answer;
+    public String getDate() {
+        return date;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
 

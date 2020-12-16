@@ -25,6 +25,7 @@ public class Sign_Up extends AppCompatActivity {
     Button already_user, mSignupBtn;
     TextInputLayout mName, mUsername, mEmail, mPassword;
     FirebaseAuth fAuth;
+    User user;
 
 
     @Override
@@ -99,7 +100,10 @@ public class Sign_Up extends AppCompatActivity {
                         if(task.isSuccessful()) {
 
                             //create user object and send to realtime database
-                            User user = new User(name, username, email);
+                            //User user = new User(name, username, email);
+                            user.setEmail(email);
+                            user.setUsername(username);
+                            user.setName(name);
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {

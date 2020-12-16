@@ -102,7 +102,7 @@ public class recActivity extends AppCompatActivity {
 
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("objects").orderByChild("ItemName").startAt(s).endAt(s + "\uf8ff"), model.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("objects").orderByChild("name").startAt(s).endAt(s + "\uf8ff"), model.class)
                         .build();
 
         adapter = new myadapter(options);

@@ -20,4 +20,14 @@
     <string name="time">Time</string>
     <string name="date">Date</string>
     <string name="create_a_post">Create a post.</string>
+
+    <string-array name="Categories">
+        <item>Clothes</item>
+        <item>Electronics</item>
+        <item>Household goods</item>
+        <item>Personal Belongings</item>
+        <item>Other</item>
+
+    </string-array>
+
 </resources>
