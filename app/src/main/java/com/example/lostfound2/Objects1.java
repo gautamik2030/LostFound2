@@ -3,9 +3,21 @@ package com.example.lostfound2;
 public class Objects1 {
 
     private String name,location,contact,question,date,username,category;
-
     public Objects1() {
+
     }
+
+    public Objects1(String name, String location, String contact, String question, String date, String username, String category) {
+        this.name = name;
+        this.location = location;
+        this.contact = contact;
+        this.question = question;
+        this.date = date;
+        this.username = username;
+        this.category = category;
+    }
+
+
 
     public String getName() {
         return name;
