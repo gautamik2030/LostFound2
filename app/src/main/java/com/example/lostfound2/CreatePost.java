@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -43,15 +44,15 @@ public class CreatePost extends AppCompatActivity implements AdapterView.OnItemS
 
 
 
-        name = (TextInputEditText) findViewById(R.id.name);
-        location = (TextInputEditText) findViewById(R.id.location);
-        contact = (TextInputEditText) findViewById(R.id.contact);
-        question = (TextInputEditText) findViewById(R.id.question);
-        date = (TextInputEditText) findViewById(R.id.answer);
-        username = (TextInputEditText) findViewById(R.id.userName);
+        name = (TextInputEditText) findViewById(R.id.create_name_item);
+        location = (TextInputEditText) findViewById(R.id.create_location);
+        contact = (TextInputEditText) findViewById(R.id.create_contact);
+        question = (TextInputEditText) findViewById(R.id.create_question);
+        date = (TextInputEditText) findViewById(R.id.create_datetime);
+        username = (TextInputEditText) findViewById(R.id.create_UserName);
 
         submit = (Button) findViewById(R.id.submit);
-        obj =new Objects1();
+        //obj =new Objects1();
         ref = FirebaseDatabase.getInstance().getReference().child("objects");
         //user = new User();
 
@@ -62,20 +63,36 @@ public class CreatePost extends AppCompatActivity implements AdapterView.OnItemS
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseUser fuser = fauth.getCurrentUser();
-                String uid = fuser.getUid();
-                String user = fuser.getEmail();
-                obj.setName(name.getText().toString().trim());
+                //FirebaseUser fuser = fauth.getCurrentUser();
+                //String uid = fuser.getUid();
+                //String user = fuser.getEmail();
+                String n = name.getText().toString();
+                String l = location.getText().toString();
+                String c = contact.getText().toString();
+                String q = question.getText().toString();
+                String d = date.getText().toString();
+                String u = username.getText().toString();
+                String cat = spinnerCategory.getSelectedItem().toString();
+                obj = new Objects1(n,l,c,q,d,u,cat);
+                ref.push().setValue(obj);
+                Toast.makeText(CreatePost.this,"Post Created Successfully!",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getApplicationContext(), recActivity.class));
+                /*obj.setName(name.getText().toString().trim());
                 obj.setLocation(location.getText().toString().trim());
                 obj.setContact(contact.getText().toString().trim());
                 obj.setQuestion(question.getText().toString().trim());
                 obj.setCategory(spinnerCategory.toString().trim());
                 obj.setDate(date.getText().toString().trim());
-                obj.setUsername(username.getText().toString().trim());
+                obj.setUsername(username.getText().toString().trim());*/
+
+
                 //String u = user.getUsername();
                 //ref.push().setValue(obj);
 
-                FirebaseDatabase.getInstance().getReference().child("objects").push().setValue(obj).addOnCompleteListener(new OnCompleteListener<Void>() {
+                //FirebaseDatabase.getInstance().getReference().child("objects");
+                        //.push().setValue(obj);
+                //setLayoutManager(new LinearLayoutManager(this));
+                        /*addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 
@@ -92,7 +109,7 @@ public class CreatePost extends AppCompatActivity implements AdapterView.OnItemS
                         }
                     }
 
-                });
+                });*/
             }
         });
     }
