@@ -40,7 +40,7 @@ public class recActivity extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("objects"), model.class)
                         .build();
 
-        adapter = new myadapter(options);
+        adapter = new myadapter(options, getApplicationContext());
         recView.setAdapter(adapter);
         adapter.startListening();
         create = findViewById(R.id.button2);
@@ -105,7 +105,7 @@ public class recActivity extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("objects").orderByChild("name").startAt(s).endAt(s + "\uf8ff"), model.class)
                         .build();
 
-        adapter = new myadapter(options);
+        adapter = new myadapter(options, getApplicationContext());
         adapter.startListening();
         recView.setAdapter(adapter);
 

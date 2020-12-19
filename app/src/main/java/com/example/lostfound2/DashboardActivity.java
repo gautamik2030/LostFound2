@@ -47,7 +47,7 @@ public class DashboardActivity extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("objects").orderByChild("username").startAt(user).endAt(user + "\uf8ff"), model.class)
                         .build();
 
-        adapter = new myadapter(options);
+        adapter = new myadapter(options, getApplicationContext());
         recView.setAdapter(adapter);
         adapter.startListening();
     }
@@ -104,7 +104,7 @@ public class DashboardActivity extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("objects").orderByChild("username").startAt(user).endAt(user + "\uf8ff").orderByChild("name").startAt(s).endAt(s+"\uff8ff"), model.class)
                         .build();
 
-        adapter = new myadapter(options);
+        adapter = new myadapter(options, getApplicationContext());
         adapter.startListening();
         recView.setAdapter(adapter);
 
