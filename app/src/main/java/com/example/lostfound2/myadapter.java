@@ -15,7 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class myadapter extends FirebaseRecyclerAdapter<model, myadapter.myviewholder> {
@@ -34,7 +38,7 @@ public class myadapter extends FirebaseRecyclerAdapter<model, myadapter.myviewho
     @Override
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull model Model) {
 
-       //model temp= myadapter.get(position);
+
         // setter has fed the info about variables and in this method we retrieve the data using getter
         holder.ItemName.setText(Model.getItemName());
         holder.Location.setText(Model.getLocation());
@@ -44,26 +48,57 @@ public class myadapter extends FirebaseRecyclerAdapter<model, myadapter.myviewho
         holder.contact.setText(Model.getContact());
         holder.question.setText(Model.getQuestion());
 
-
+        String id = getRef(position).getKey();
+       DatabaseReference iref = getRef(position);
+        DatabaseReference dref = FirebaseDatabase.getInstance().getReference().child("objects");
         holder.v.setOnClickListener(v -> {
 
-            Intent intent= new Intent(context, DetailsActivity.class);
-            intent.putExtra("Itemname", getRef(position).getKey());
-            intent.putExtra("Location", getRef(position).getKey());
-            intent.putExtra("Date", getRef(position).getKey());
-            intent.putExtra("question", getRef(position).getKey());
-            intent.putExtra("usname", getRef(position).getKey());
-            intent.putExtra("contact", getRef(position).getKey());
+                    getRef(position).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            String det_n = snapshot.child("name").getValue().toString();
+                            String det_u = snapshot.child("username").getValue().toString();
+                            String det_d = snapshot.child("date").getValue().toString();
+                            String det_q = snapshot.child("question").getValue().toString();
+                            String det_l = snapshot.child("location").getValue().toString();
+                            String det_c = snapshot.child("contact").getValue().toString();
+                            holder.ItemName.setText(det_n);
+                            holder.Location.setText(det_l);
+                            holder.Date.setText(det_d);
+                            holder.contact.setText(det_c);
+                            holder.username.setText(det_u);
+                            holder.question.setText(det_q);
+                            Intent intent = new Intent(context, DetailsActivity.class);
+                            intent.putExtra("Itemname", det_n);
+                            intent.putExtra("Location", det_l);
+                            intent.putExtra("Date", det_d);
+                            intent.putExtra("question", det_q);
+                            intent.putExtra("usname", det_u);
+                            intent.putExtra("contact", det_c);
 
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(intent);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            context.startActivity(intent);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
 
 
-        });
+                    });
 
 
 
-    }
+
+                });
+
+}
+
+
+
+
+
 
 
     @NonNull
@@ -98,6 +133,5 @@ public class myadapter extends FirebaseRecyclerAdapter<model, myadapter.myviewho
 
         }
     }
-
 
 
