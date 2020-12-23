@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:weightSum="100"
     android:background="#ffff"
-    android:padding="20dp"
+    android:padding="10dp"
     android:orientation="vertical"
     tools:context=".DetailsActivity">
 
@@ -19,21 +19,31 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="121dp"
+        android:layout_height="51dp"
         android:layout_weight="10"
-        android:text="Find your lost item"
-        android:textSize="36sp"
         android:fontFamily="@font/amaranth_italic"
-        />
+        android:text="Find your lost item"
+        android:textSize="36sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="100"
         android:orientation="vertical"
-        android:padding="15dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+        android:padding="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Object Name:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
         <TextView
             android:id="@+id/objname"
             android:layout_width="match_parent"
@@ -41,6 +51,16 @@
             android:layout_weight="10"
             android:text="This is the object name"
             android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Location:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
 
         <TextView
             android:id="@+id/locname"
@@ -51,6 +71,15 @@
             android:textSize="25sp" />
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Date and Time:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
             android:id="@+id/dateV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,6 +87,14 @@
             android:text=" This is the Date"
             android:textSize="25sp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Verification Question:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
 
 
         <TextView
@@ -78,10 +115,20 @@
         android:layout_height="wrap_content"
         android:weightSum="100"
         android:orientation="vertical"
-        android:padding="15dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:text="Founder Contact Info:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+              />
+
         <TextView
             android:id="@+id/nameV"
             android:layout_width="match_parent"
